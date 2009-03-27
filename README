@@ -1,0 +1,66 @@
+= added_methods - Watches for added methods and records them.
+
+== VERSION
+
+This documentation refers to added_methods version 0.1.0
+
+
+== DESCRIPTION
+
+Watches for added methods and records them. Inspired by
+unroller[http://unroller.rubyforge.org/classes/Unroller.html#M000034].
+
+Example:
+
+  require 'rubygems'
+  require 'added_methods/init'
+
+  require 'some/library/or/whatever'
+
+  matches = AddedMethods.find(
+    :name  => 'method_name',
+    :class => SomeClass  # optional
+  )
+
+  # get the class(es) where matching method(s) were defined
+  matches.each { |am| puts am.klass  # also am[:klass] or am[:class] }
+
+  # assume the first one is the one we're looking for
+  am = matches.first
+
+  # is it a singleton method?
+  puts am.singleton?
+
+  # where exactly has it been defined?
+  puts "#{am.file}, line #{am.line}"
+
+  # now get its source
+  puts am  # implies #to_s, you can also call #extract_source directly
+
+
+== LINKS
+
+<b></b>
+Source code::       <http://github.com/blackwinter/added_methods>
+
+
+== AUTHORS
+
+* Jens Wille <mailto:jens.wille@uni-koeln.de>
+
+
+== LICENSE AND COPYRIGHT
+
+Copyright (C) 2007-2009 Jens Wille
+
+added_methods is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+added_methods is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+added_methods. If not, see <http://www.gnu.org/licenses/>.
