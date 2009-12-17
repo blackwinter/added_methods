@@ -4,16 +4,11 @@ begin
   require 'hen'
 
   Hen.lay! {{
-    :rubyforge => {
-      :project => '', #%q{added_methods},
-      :package => %q{added_methods},
-      :rdoc_dir => nil
-    },
-
     :gem => {
+      :name         => %q{added_methods},
       :version      => AddedMethods::VERSION,
       :summary      => %q{Watches for added methods and records them.},
-      :homepage     => 'http://github.com/blackwinter/added_methods', #%q{http://added_methods.rubyforge.org/},
+      :homepage     => 'http://github.com/blackwinter/added_methods',
       :files        => FileList['lib/**/*.rb'].to_a,
       :extra_files  => FileList['[A-Z]*'].to_a,
       :dependencies => %w[]
