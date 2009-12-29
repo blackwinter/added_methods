@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: AddedMethods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">AddedMethods</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/added_methods_rb.html">
+                lib/added_methods.rb
+                </a>
+        <br />
+                <a href="../files/lib/added_methods/added_method_rb.html">
+                lib/added_methods/added_method.rb
+                </a>
+        <br />
+                <a href="../files/lib/added_methods/version_rb.html">
+                lib/added_methods/version.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000013">[]</a>&nbsp;&nbsp;
+      <a href="#M000024">add_method</a>&nbsp;&nbsp;
+      <a href="#M000023">added_method_callback</a>&nbsp;&nbsp;
+      <a href="#M000008">all_methods</a>&nbsp;&nbsp;
+      <a href="#M000003">callback</a>&nbsp;&nbsp;
+      <a href="#M000002">callbacks</a>&nbsp;&nbsp;
+      <a href="#M000004">define_callback</a>&nbsp;&nbsp;
+      <a href="#M000020">defined_in_irb?</a>&nbsp;&nbsp;
+      <a href="#M000009">find</a>&nbsp;&nbsp;
+      <a href="#M000010">find_by_class</a>&nbsp;&nbsp;
+      <a href="#M000011">find_by_name</a>&nbsp;&nbsp;
+      <a href="#M000012">find_one_by_name_or_class</a>&nbsp;&nbsp;
+      <a href="#M000019">have_readline_history?</a>&nbsp;&nbsp;
+      <a href="#M000025">identify_added_method</a>&nbsp;&nbsp;
+      <a href="#M000001">init</a>&nbsp;&nbsp;
+      <a href="#M000017">init_all_methods</a>&nbsp;&nbsp;
+      <a href="#M000016">init_callbacks</a>&nbsp;&nbsp;
+      <a href="#M000015">init_script_lines</a>&nbsp;&nbsp;
+      <a href="#M000007">install_callbacks</a>&nbsp;&nbsp;
+      <a href="#M000021">irb?</a>&nbsp;&nbsp;
+      <a href="#M000018">patch_readline_history</a>&nbsp;&nbsp;
+      <a href="#M000005">remove_callback</a>&nbsp;&nbsp;
+      <a href="#M000006">replace_callback</a>&nbsp;&nbsp;
+      <a href="#M000014">singleton_class</a>&nbsp;&nbsp;
+      <a href="#M000022">where</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="AddedMethods/Version.html" class="link">AddedMethods::Version</a><br />
+Class <a href="AddedMethods/AddedMethod.html" class="link">AddedMethods::AddedMethod</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">HISTFILENAME</td>
+          <td>=</td>
+          <td class="context-item-value">'(Readline::HISTORY)'.freeze unless const_defined?(:HISTFILENAME)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">Version.to_s</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <span class="method-name">[]</span><span class="method-args">(name_or_class, conditions = {})</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="AddedMethods.html#M000012">find_one_by_name_or_class</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="#M000008" class="method-signature">
+          <span class="method-name">all_methods</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 113</span>
+113:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">all_methods</span>
+114:     <span class="ruby-identifier">init_all_methods</span>
+115:     <span class="ruby-constant">ALL_METHODS</span>
+116:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="#M000003" class="method-signature">
+          <span class="method-name">callback</span><span class="method-args">(*args, &amp;inner_block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/added_methods.rb, line 58</span>
+58:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">callback</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">inner_block</span>)
+59:     <span class="ruby-identifier">callback_args</span> = [<span class="ruby-identifier">identify_added_method</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">caller</span>), <span class="ruby-identifier">caller</span>, <span class="ruby-identifier">inner_block</span>]
+60:     <span class="ruby-identifier">callbacks</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">callback</span><span class="ruby-operator">|</span> <span class="ruby-identifier">callback</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">callback_args</span>] }
+61:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="#M000002" class="method-signature">
+          <span class="method-name">callbacks</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000002-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/added_methods.rb, line 53</span>
+53:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">callbacks</span>
+54:     <span class="ruby-identifier">init_callbacks</span>
+55:     <span class="ruby-constant">CALLBACKS</span>
+56:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="#M000004" class="method-signature">
+          <span class="method-name">define_callback</span><span class="method-args">(name, regexp = //, klasses = [], &amp;outer_block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000004-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/added_methods.rb, line 63</span>
+63:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_callback</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">regexp</span> = <span class="ruby-regexp re">//</span>, <span class="ruby-identifier">klasses</span> = [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">outer_block</span>)
+64:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;wrong argument type #{name.class} (expected Symbol)&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+65:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;callback with name #{name} already exists&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">callbacks</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-identifier">name</span>)
+66: 
+67:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;wrong argument type #{regexp.class} (expected Regexp)&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">regexp</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>)
+68:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;wrong argument type #{klasses.class} (expected container object)&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:empty?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:include?</span>)
+69: 
+70:     <span class="ruby-identifier">callbacks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">am</span>, <span class="ruby-identifier">callstack</span>, <span class="ruby-identifier">inner_block</span><span class="ruby-operator">|</span>
+71:       <span class="ruby-identifier">method</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">am</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">am</span>.<span class="ruby-identifier">klass</span>
+72: 
+73:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-node">%w[method_added singleton_method_added]</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>)
+74: 
+75:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">to_s</span>)
+76:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regexp</span>
+77: 
+78:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">outer_block</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">inner_block</span>
+79:         <span class="ruby-identifier">outer_block</span>[<span class="ruby-identifier">am</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">outer_block</span>
+80:         <span class="ruby-identifier">inner_block</span>[<span class="ruby-identifier">am</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">inner_block</span>
+81:       <span class="ruby-keyword kw">else</span>
+82:         <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;[#{am.base}] Adding #{'singleton ' if am.singleton?}method #{klass}##{method}&quot;</span>
+83: 
+84:         <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">irb?</span>(<span class="ruby-identifier">callstack</span>)
+85:           <span class="ruby-node">&quot; in (irb:#{IRB.conf[:MAIN_CONTEXT].instance_variable_get(:@line_no)})&quot;</span>
+86:         <span class="ruby-keyword kw">else</span>
+87:           <span class="ruby-node">&quot; at #{where(callstack)}&quot;</span>
+88:         <span class="ruby-keyword kw">end</span>
+89: 
+90:         <span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+91:       <span class="ruby-keyword kw">end</span>
+92:     }]
+93:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="#M000009" class="method-signature">
+          <span class="method-name">find</span><span class="method-args">(conditions = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000009-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 118</span>
+118:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">conditions</span> = {})
+119:     <span class="ruby-identifier">conditions</span> = <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">dup</span>
+120: 
+121:     <span class="ruby-identifier">class_condition</span> = <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:class</span>)
+122:     <span class="ruby-identifier">file_condition</span>  = <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:file</span>)
+123: 
+124:     <span class="ruby-identifier">results</span> = []
+125: 
+126:     <span class="ruby-identifier">all_methods</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>, <span class="ruby-identifier">files</span><span class="ruby-operator">|</span>
+127:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">class_condition</span>
+128:         <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">class_condition</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">class_condition</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">klass</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">klass</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">class_condition</span>
+129:       <span class="ruby-keyword kw">end</span>
+130: 
+131:       <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span>, <span class="ruby-identifier">entries</span><span class="ruby-operator">|</span>
+132:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file_condition</span>
+133:           <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">file_condition</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">file_condition</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">file_condition</span>
+134:         <span class="ruby-keyword kw">end</span>
+135: 
+136:         <span class="ruby-identifier">entries</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">am</span><span class="ruby-operator">|</span>
+137:           <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">am</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+138:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">value</span>
+139:               <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>, <span class="ruby-constant">Range</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">am</span>[<span class="ruby-identifier">key</span>])
+140:               <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Regexp</span>       <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">am</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">to_s</span>
+141:               <span class="ruby-keyword kw">else</span>                   <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">am</span>[<span class="ruby-identifier">key</span>]
+142:             <span class="ruby-keyword kw">end</span>
+143:           }
+144:         }
+145:       }
+146:     }
+147: 
+148:     <span class="ruby-identifier">results</span>
+149:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="#M000010" class="method-signature">
+          <span class="method-name">find_by_class</span><span class="method-args">(*classes)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000010-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000010-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 151</span>
+151:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_by_class</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">classes</span>)
+152:     <span class="ruby-identifier">conditions</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+153:     <span class="ruby-identifier">find</span>(<span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">classes</span>))
+154:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="#M000011" class="method-signature">
+          <span class="method-name">find_by_name</span><span class="method-args">(*names)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000011-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 156</span>
+156:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_by_name</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">names</span>)
+157:     <span class="ruby-identifier">conditions</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+158:     <span class="ruby-identifier">find</span>(<span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span> }))
+159:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="#M000012" class="method-signature">
+          <span class="method-name">find_one_by_name_or_class</span><span class="method-args">(name_or_class, conditions = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000012-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 161</span>
+161:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_one_by_name_or_class</span>(<span class="ruby-identifier">name_or_class</span>, <span class="ruby-identifier">conditions</span> = {})
+162:     (<span class="ruby-identifier">name_or_class</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>) <span class="ruby-operator">?</span>
+163:       <span class="ruby-identifier">find_by_class</span>(<span class="ruby-identifier">name_or_class</span>) <span class="ruby-operator">:</span>
+164:       <span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">name_or_class</span>)
+165:     ).<span class="ruby-identifier">last</span>
+166:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="#M000001" class="method-signature">
+          <span class="method-name">init</span><span class="method-args">(regexp = nil, klasses = [], &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000001-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/added_methods.rb, line 45</span>
+45:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">regexp</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">klasses</span> = [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+46:     <span class="ruby-identifier">init_script_lines</span>
+47:     <span class="ruby-identifier">patch_readline_history</span>
+48: 
+49:     <span class="ruby-identifier">define_callback</span>(<span class="ruby-identifier">:__init</span>, <span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">regexp</span>
+50:     <span class="ruby-identifier">install_callbacks</span>
+51:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="#M000007" class="method-signature">
+          <span class="method-name">install_callbacks</span><span class="method-args">(bases = [Object, Class, Module, Kernel])</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 104</span>
+104:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_callbacks</span>(<span class="ruby-identifier">bases</span> = [<span class="ruby-constant">Object</span>, <span class="ruby-constant">Class</span>, <span class="ruby-constant">Module</span>, <span class="ruby-constant">Kernel</span>])
+105:     <span class="ruby-identifier">bases</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">base</span><span class="ruby-operator">|</span>
+106:       [<span class="ruby-identifier">base</span>, <span class="ruby-identifier">singleton_class</span>(<span class="ruby-identifier">base</span>)].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+107:         <span class="ruby-identifier">b</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:define_method</span>, <span class="ruby-identifier">:method_added</span>)           { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-constant">AddedMethods</span>.<span class="ruby-identifier">callback</span>(<span class="ruby-identifier">b</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">id</span>, <span class="ruby-keyword kw">false</span>) }
+108:         <span class="ruby-identifier">b</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:define_method</span>, <span class="ruby-identifier">:singleton_method_added</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-constant">AddedMethods</span>.<span class="ruby-identifier">callback</span>(<span class="ruby-identifier">b</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">id</span>, <span class="ruby-keyword kw">true</span>)  }
+109:       }
+110:     }
+111:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="#M000005" class="method-signature">
+          <span class="method-name">remove_callback</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000005-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/added_methods.rb, line 95</span>
+95:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_callback</span>(<span class="ruby-identifier">name</span>)
+96:     <span class="ruby-identifier">callbacks</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }
+97:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">replace_callback</span><span class="method-args">(name, regexp = nil, klasses = [], &amp;outer_block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 99</span>
+ 99:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace_callback</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">regexp</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">klasses</span> = [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">outer_block</span>)
+100:     <span class="ruby-identifier">remove_callback</span>(<span class="ruby-identifier">name</span>)
+101:     <span class="ruby-identifier">define_callback</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">outer_block</span>)
+102:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Private Instance methods</h3>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="#M000024" class="method-signature">
+          <span class="method-name">add_method</span><span class="method-args">(am)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 239</span>
+239:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_method</span>(<span class="ruby-identifier">am</span>)
+240:     <span class="ruby-identifier">am</span> = <span class="ruby-constant">AddedMethod</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">am</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">am</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">AddedMethod</span>)
+241:     <span class="ruby-identifier">all_methods</span>[<span class="ruby-identifier">am</span>.<span class="ruby-identifier">klass</span>][<span class="ruby-identifier">am</span>.<span class="ruby-identifier">file</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">am</span>
+242:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="#M000023" class="method-signature">
+          <span class="method-name">added_method_callback</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 235</span>
+235:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">added_method_callback</span>
+236:     <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">am</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_method</span>(<span class="ruby-identifier">am</span>) }
+237:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name">defined_in_irb?</span><span class="method-args">(callstack)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 217</span>
+217:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">defined_in_irb?</span>(<span class="ruby-identifier">callstack</span>)
+218:     <span class="ruby-identifier">callstack</span> = <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">dup</span>
+219: 
+220:     <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">shift</span>  <span class="ruby-comment cmt"># ignore immediate caller</span>
+221:     <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\(irb\):|:in `irb_binding'/</span> }
+222:     <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">%r{/irb/workspace\.rb:}</span>
+223: 
+224:     <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">empty?</span>
+225:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="#M000019" class="method-signature">
+          <span class="method-name">have_readline_history?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000019-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 213</span>
+213:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">have_readline_history?</span>
+214:     <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">:Readline</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Readline</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">:HISTORY</span>)
+215:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <a href="#M000025" class="method-signature">
+          <span class="method-name">identify_added_method</span><span class="method-args">(base, klass, id, singleton, callstack)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 244</span>
+244:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">identify_added_method</span>(<span class="ruby-identifier">base</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">singleton</span>, <span class="ruby-identifier">callstack</span>)
+245:     <span class="ruby-identifier">am</span> = {
+246:       <span class="ruby-identifier">:base</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">base</span>,
+247:       <span class="ruby-identifier">:class</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>,
+248:       <span class="ruby-identifier">:name</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">id2name</span>,
+249:       <span class="ruby-identifier">:singleton</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">singleton</span>
+250:     }
+251: 
+252:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">irb?</span>(<span class="ruby-identifier">callstack</span>)
+253:       <span class="ruby-identifier">am</span>.<span class="ruby-identifier">update</span>(
+254:         <span class="ruby-identifier">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">HISTFILENAME</span>,
+255:         <span class="ruby-identifier">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>.<span class="ruby-identifier">size</span>,
+256:         <span class="ruby-identifier">:def</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">begin</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>[<span class="ruby-value">-1</span>] <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">IndexError</span> <span class="ruby-keyword kw">end</span>
+257:       )
+258:     <span class="ruby-keyword kw">else</span>
+259:       <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">_</span> = <span class="ruby-identifier">where</span>(<span class="ruby-identifier">callstack</span>).<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>)
+260:       <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">to_i</span>
+261: 
+262:       <span class="ruby-identifier">am</span>.<span class="ruby-identifier">update</span>(
+263:         <span class="ruby-identifier">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>,
+264:         <span class="ruby-identifier">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>,
+265:         <span class="ruby-identifier">:def</span>  =<span class="ruby-operator">&gt;</span> (<span class="ruby-constant">SCRIPT_LINES__</span>[<span class="ruby-identifier">file</span>] <span class="ruby-operator">||</span> [])[<span class="ruby-identifier">line</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+266:       )
+267:     <span class="ruby-keyword kw">end</span>
+268: 
+269:     <span class="ruby-constant">AddedMethod</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">am</span>)
+270:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="#M000017" class="method-signature">
+          <span class="method-name">init_all_methods</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000017-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 189</span>
+189:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_all_methods</span>
+190:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">:ALL_METHODS</span>)
+191:       <span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">:ALL_METHODS</span>, <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+192:         <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-identifier">j</span>] = [] }
+193:       })
+194:     <span class="ruby-keyword kw">end</span>
+195:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="#M000016" class="method-signature">
+          <span class="method-name">init_callbacks</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000016-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 182</span>
+182:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_callbacks</span>
+183:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">:CALLBACKS</span>)
+184:       <span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">:CALLBACKS</span>, [])
+185:       <span class="ruby-identifier">define_callback</span>(<span class="ruby-identifier">:__default</span>, <span class="ruby-regexp re">//</span>, [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">added_method_callback</span>)
+186:     <span class="ruby-keyword kw">end</span>
+187:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="#M000015" class="method-signature">
+          <span class="method-name">init_script_lines</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000015-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000015-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 176</span>
+176:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_script_lines</span>
+177:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">:SCRIPT_LINES__</span>)
+178:       <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">:SCRIPT_LINES__</span>, {})
+179:     <span class="ruby-keyword kw">end</span>
+180:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="#M000021" class="method-signature">
+          <span class="method-name">irb?</span><span class="method-args">(callstack)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 227</span>
+227:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">irb?</span>(<span class="ruby-identifier">callstack</span>)
+228:     <span class="ruby-identifier">have_readline_history?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">defined_in_irb?</span>(<span class="ruby-identifier">callstack</span>)
+229:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="#M000018" class="method-signature">
+          <span class="method-name">patch_readline_history</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000018-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000018-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 197</span>
+197:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patch_readline_history</span>
+198:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">have_readline_history?</span>
+199:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:_added_methods_original_push</span>)
+200: 
+201:     <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>
+202:       <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:_added_methods_original_push</span>, <span class="ruby-identifier">:push</span>
+203: 
+204:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">l</span>)
+205:         (<span class="ruby-constant">SCRIPT_LINES__</span>[<span class="ruby-constant">HISTFILENAME</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>.<span class="ruby-identifier">to_a</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">l</span>
+206:         <span class="ruby-identifier">_added_methods_original_push</span>(<span class="ruby-identifier">l</span>)
+207:       <span class="ruby-keyword kw">end</span>
+208: 
+209:       <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:&lt;&lt;</span>, <span class="ruby-identifier">:push</span>
+210:     <span class="ruby-keyword kw">end</span>
+211:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="#M000014" class="method-signature">
+          <span class="method-name">singleton_class</span><span class="method-args">(klass = self)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000014-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000014-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 172</span>
+172:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">singleton_class</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-keyword kw">self</span>)
+173:     <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>
+174:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="#M000022" class="method-signature">
+          <span class="method-name">where</span><span class="method-args">(callstack, default = '(none):0')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/added_methods.rb, line 231</span>
+231:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">where</span>(<span class="ruby-identifier">callstack</span>, <span class="ruby-identifier">default</span> = <span class="ruby-value str">'(none):0'</span>)
+232:     <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/:in `.*'/</span> } <span class="ruby-operator">||</span> <span class="ruby-identifier">callstack</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">default</span>
+233:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
