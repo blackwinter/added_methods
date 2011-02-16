@@ -1,21 +1,18 @@
-require %q{lib/added_methods/version}
+require File.expand_path(%q{../lib/added_methods/version}, __FILE__)
 
 begin
   require 'hen'
 
   Hen.lay! {{
     :gem => {
-      :name         => %q{added_methods},
-      :version      => AddedMethods::VERSION,
-      :summary      => %q{Watches for added methods and records them.},
-      :homepage     => 'http://github.com/blackwinter/added_methods',
-      :files        => FileList['lib/**/*.rb'].to_a,
-      :extra_files  => FileList['[A-Z]*'].to_a,
-      :dependencies => %w[]
+      :name     => %q{added_methods},
+      :version  => AddedMethods::VERSION,
+      :summary  => %q{Watches for added methods and records them.},
+      :author   => %q{Jens Wille},
+      :email    => %q{jens.wille@uni-koeln.de},
+      :homepage => :blackwinter
     }
   }}
-rescue LoadError
-  abort "Please install the 'hen' gem first."
+rescue LoadError => err
+  warn "Please install the `hen' gem. (#{err})"
 end
-
-### Place your custom Rake tasks here.
