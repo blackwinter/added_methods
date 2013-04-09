@@ -9,7 +9,7 @@ begin
       :version  => AddedMethods::VERSION,
       :summary  => %q{Watches for added methods and records them.},
       :author   => %q{Jens Wille},
-      :email    => %q{jens.wille@uni-koeln.de},
+      :email    => %q{jens.wille@gmail.com},
       :homepage => :blackwinter
     }
   }}

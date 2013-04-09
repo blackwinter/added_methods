@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Jens Wille"]
   s.date = %q{2011-04-29}
   s.description = %q{Watches for added methods and records them.}
-  s.email = %q{jens.wille@uni-koeln.de}
+  s.email = %q{jens.wille@gmail.com}
   s.extra_rdoc_files = ["README", "COPYING", "ChangeLog"]
   s.files = ["lib/added_methods/added_method.rb", "lib/added_methods/init.rb", "lib/added_methods/version.rb", "lib/added_methods.rb", "README", "ChangeLog", "Rakefile", "COPYING", "spec/spec.opts", "spec/added_methods_spec.rb", "spec/spec_helper.rb"]
   s.homepage = %q{http://github.com/blackwinter/added_methods}
