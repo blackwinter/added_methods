@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module AddedMethods - added_methods Application documentation (v0.1.1)</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/added_methods.rb
+    <li>lib/added_methods/added_method.rb
+    <li>lib/added_methods/version.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-add_method">#add_method</a>
+    
+    <li ><a href="#method-i-added_method_callback">#added_method_callback</a>
+    
+    <li ><a href="#method-i-all_methods">#all_methods</a>
+    
+    <li ><a href="#method-i-callback">#callback</a>
+    
+    <li ><a href="#method-i-callbacks">#callbacks</a>
+    
+    <li ><a href="#method-i-define_callback">#define_callback</a>
+    
+    <li ><a href="#method-i-defined_in_irb-3F">#defined_in_irb?</a>
+    
+    <li ><a href="#method-i-find">#find</a>
+    
+    <li ><a href="#method-i-find_by_class">#find_by_class</a>
+    
+    <li ><a href="#method-i-find_by_name">#find_by_name</a>
+    
+    <li ><a href="#method-i-find_one_by_name_or_class">#find_one_by_name_or_class</a>
+    
+    <li ><a href="#method-i-have_readline_history-3F">#have_readline_history?</a>
+    
+    <li ><a href="#method-i-identify_added_method">#identify_added_method</a>
+    
+    <li ><a href="#method-i-init">#init</a>
+    
+    <li ><a href="#method-i-init_all_methods">#init_all_methods</a>
+    
+    <li ><a href="#method-i-init_callbacks">#init_callbacks</a>
+    
+    <li ><a href="#method-i-init_script_lines">#init_script_lines</a>
+    
+    <li ><a href="#method-i-install_callbacks">#install_callbacks</a>
+    
+    <li ><a href="#method-i-irb-3F">#irb?</a>
+    
+    <li ><a href="#method-i-patch_readline_history">#patch_readline_history</a>
+    
+    <li ><a href="#method-i-remove_callback">#remove_callback</a>
+    
+    <li ><a href="#method-i-replace_callback">#replace_callback</a>
+    
+    <li ><a href="#method-i-singleton_class">#singleton_class</a>
+    
+    <li ><a href="#method-i-where">#where</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="./ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AddedMethods.html">AddedMethods</a>
+  
+    <li><a href="./AddedMethods/AddedMethod.html">AddedMethods::AddedMethod</a>
+  
+    <li><a href="./AddedMethods/Readline/HISTORY.html">AddedMethods::Readline::HISTORY</a>
+  
+    <li><a href="./AddedMethods/Version.html">AddedMethods::Version</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module AddedMethods</h1>
+
+  <div id="description" class="description">
+    
+<p>TODO:</p>
+<ul><li>
+<p>multi-line statements in irb w/o ruby2ruby? (=&gt; extract_source)</p>
+</li><li>
+<p>polishing!</p>
+</li></ul>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="HISTFILENAME">HISTFILENAME
+        
+        <dd class="description">
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(name_or_class, conditions = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="AddedMethods.html#method-i-find_one_by_name_or_class">find_one_by_name_or_class</a>
+        </div>
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-all_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_methods</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="all_methods-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all_methods</span>
+  <span class="ruby-identifier">init_all_methods</span>
+  <span class="ruby-constant">ALL_METHODS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_methods-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_methods-method -->
+
+    
+      <div id="method-i-callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callback</span><span
+            class="method-args">(*args, &inner_block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="callback-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callback</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">inner_block</span>)
+  <span class="ruby-identifier">callback_args</span> = [<span class="ruby-identifier">identify_added_method</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">caller</span>), <span class="ruby-identifier">caller</span>, <span class="ruby-identifier">inner_block</span>]
+  <span class="ruby-identifier">callbacks</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">callback</span><span class="ruby-operator">|</span> <span class="ruby-identifier">callback</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">callback_args</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callback-method -->
+
+    
+      <div id="method-i-callbacks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callbacks</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="callbacks-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callbacks</span>
+  <span class="ruby-identifier">init_callbacks</span>
+  <span class="ruby-constant">CALLBACKS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callbacks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callbacks-method -->
+
+    
+      <div id="method-i-define_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">define_callback</span><span
+            class="method-args">(name, regexp = //, klasses = [], &outer_block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="define_callback-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">define_callback</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">regexp</span> = <span class="ruby-regexp">//</span>, <span class="ruby-identifier">klasses</span> = [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">outer_block</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;wrong argument type #{name.class} (expected Symbol)&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;callback with name #{name} already exists&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">callbacks</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-identifier">name</span>)
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;wrong argument type #{regexp.class} (expected Regexp)&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">regexp</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;wrong argument type #{klasses.class} (expected container object)&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:empty?</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:include?</span>)
+
+  <span class="ruby-identifier">callbacks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">am</span>, <span class="ruby-identifier">callstack</span>, <span class="ruby-identifier">inner_block</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">method</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">am</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">am</span>.<span class="ruby-identifier">klass</span>
+
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-node">%w[method_added singleton_method_added]</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method</span>)
+
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regexp</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">outer_block</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">inner_block</span>
+      <span class="ruby-identifier">outer_block</span>[<span class="ruby-identifier">am</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">outer_block</span>
+      <span class="ruby-identifier">inner_block</span>[<span class="ruby-identifier">am</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">inner_block</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;[#{am.base}] Adding #{&#39;singleton &#39; if am.singleton?}method #{klass}##{method}&quot;</span>
+
+      <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">irb?</span>(<span class="ruby-identifier">callstack</span>)
+        <span class="ruby-node">&quot; in (irb:#{IRB.conf[:MAIN_CONTEXT].instance_variable_get(:@line_no)})&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-node">&quot; at #{where(callstack)}&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-keyword">end</span>
+  }]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- define_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- define_callback-method -->
+
+    
+      <div id="method-i-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(conditions = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">conditions</span> = {})
+  <span class="ruby-identifier">conditions</span> = <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">class_condition</span> = <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:class</span>)
+  <span class="ruby-identifier">file_condition</span>  = <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:file</span>)
+
+  <span class="ruby-identifier">results</span> = []
+
+  <span class="ruby-identifier">all_methods</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>, <span class="ruby-identifier">files</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">class_condition</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">class_condition</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">class_condition</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">klass</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">klass</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">class_condition</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span>, <span class="ruby-identifier">entries</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">file_condition</span>
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">file_condition</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">file_condition</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">file_condition</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">entries</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">am</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">am</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+            <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>, <span class="ruby-constant">Range</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">am</span>[<span class="ruby-identifier">key</span>])
+            <span class="ruby-keyword">when</span> <span class="ruby-constant">Regexp</span>       <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">am</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">to_s</span>
+            <span class="ruby-keyword">else</span>                   <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">am</span>[<span class="ruby-identifier">key</span>]
+          <span class="ruby-keyword">end</span>
+        }
+      }
+    }
+  }
+
+  <span class="ruby-identifier">results</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find-method -->
+
+    
+      <div id="method-i-find_by_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_by_class</span><span
+            class="method-args">(*classes)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_by_class-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by_class</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">classes</span>)
+  <span class="ruby-identifier">conditions</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">find</span>(<span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">classes</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_by_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_by_class-method -->
+
+    
+      <div id="method-i-find_by_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_by_name</span><span
+            class="method-args">(*names)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_by_name-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by_name</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">names</span>)
+  <span class="ruby-identifier">conditions</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">find</span>(<span class="ruby-identifier">conditions</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span> }))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_by_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_by_name-method -->
+
+    
+      <div id="method-i-find_one_by_name_or_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_one_by_name_or_class</span><span
+            class="method-args">(name_or_class, conditions = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_one_by_name_or_class-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_one_by_name_or_class</span>(<span class="ruby-identifier">name_or_class</span>, <span class="ruby-identifier">conditions</span> = {})
+  (<span class="ruby-identifier">name_or_class</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>) <span class="ruby-operator">?</span>
+    <span class="ruby-identifier">find_by_class</span>(<span class="ruby-identifier">name_or_class</span>) <span class="ruby-operator">:</span>
+    <span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">name_or_class</span>)
+  ).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_one_by_name_or_class-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="AddedMethods.html#method-i-5B-5D">[]</a>
+        </div>
+        
+
+        
+      </div><!-- find_one_by_name_or_class-method -->
+
+    
+      <div id="method-i-init" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init</span><span
+            class="method-args">(regexp = nil, klasses = [], &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="init-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">regexp</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">klasses</span> = [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">init_script_lines</span>
+  <span class="ruby-identifier">patch_readline_history</span>
+
+  <span class="ruby-identifier">define_callback</span>(<span class="ruby-value">:__init</span>, <span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-identifier">install_callbacks</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- init-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- init-method -->
+
+    
+      <div id="method-i-install_callbacks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">install_callbacks</span><span
+            class="method-args">(bases = [Object, Class, Module, Kernel])</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="install_callbacks-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">install_callbacks</span>(<span class="ruby-identifier">bases</span> = [<span class="ruby-constant">Object</span>, <span class="ruby-constant">Class</span>, <span class="ruby-constant">Module</span>, <span class="ruby-constant">Kernel</span>])
+  <span class="ruby-identifier">bases</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">base</span><span class="ruby-operator">|</span>
+    [<span class="ruby-identifier">base</span>, <span class="ruby-identifier">singleton_class</span>(<span class="ruby-identifier">base</span>)].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">b</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:define_method</span>, <span class="ruby-value">:method_added</span>)           { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-constant">AddedMethods</span>.<span class="ruby-identifier">callback</span>(<span class="ruby-identifier">b</span>, <span class="ruby-keyword">self</span>, <span class="ruby-identifier">id</span>, <span class="ruby-keyword">false</span>) }
+      <span class="ruby-identifier">b</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:define_method</span>, <span class="ruby-value">:singleton_method_added</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-constant">AddedMethods</span>.<span class="ruby-identifier">callback</span>(<span class="ruby-identifier">b</span>, <span class="ruby-keyword">self</span>, <span class="ruby-identifier">id</span>, <span class="ruby-keyword">true</span>)  }
+    }
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- install_callbacks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- install_callbacks-method -->
+
+    
+      <div id="method-i-remove_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_callback</span><span
+            class="method-args">(name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_callback-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_callback</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">callbacks</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_callback-method -->
+
+    
+      <div id="method-i-replace_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace_callback</span><span
+            class="method-args">(name, regexp = nil, klasses = [], &outer_block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="replace_callback-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace_callback</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">regexp</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">klasses</span> = [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">outer_block</span>)
+  <span class="ruby-identifier">remove_callback</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">define_callback</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">klasses</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">outer_block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- replace_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- replace_callback-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Private Instance Methods</h3>
+
+    
+      <div id="method-i-add_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_method</span><span
+            class="method-args">(am)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_method-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_method</span>(<span class="ruby-identifier">am</span>)
+  <span class="ruby-identifier">am</span> = <span class="ruby-constant">AddedMethod</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">am</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">am</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">AddedMethod</span>)
+  <span class="ruby-identifier">all_methods</span>[<span class="ruby-identifier">am</span>.<span class="ruby-identifier">klass</span>][<span class="ruby-identifier">am</span>.<span class="ruby-identifier">file</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">am</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_method-method -->
+
+    
+      <div id="method-i-added_method_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">added_method_callback</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="added_method_callback-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">added_method_callback</span>
+  <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">am</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_method</span>(<span class="ruby-identifier">am</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- added_method_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- added_method_callback-method -->
+
+    
+      <div id="method-i-defined_in_irb-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">defined_in_irb?</span><span
+            class="method-args">(callstack)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="defined_in_irb-3F-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">defined_in_irb?</span>(<span class="ruby-identifier">callstack</span>)
+  <span class="ruby-identifier">callstack</span> = <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">shift</span>  <span class="ruby-comment"># ignore immediate caller</span>
+  <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\(irb\):|:in `irb_binding&#39;/</span> }
+  <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r{/irb/workspace\.rb:}</span>
+
+  <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- defined_in_irb-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- defined_in_irb-3F-method -->
+
+    
+      <div id="method-i-have_readline_history-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_readline_history?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_readline_history-3F-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 213</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_readline_history?</span>
+  <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:Readline</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Readline</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:HISTORY</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_readline_history-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_readline_history-3F-method -->
+
+    
+      <div id="method-i-identify_added_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">identify_added_method</span><span
+            class="method-args">(base, klass, id, singleton, callstack)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="identify_added_method-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 244</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">identify_added_method</span>(<span class="ruby-identifier">base</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">singleton</span>, <span class="ruby-identifier">callstack</span>)
+    <span class="ruby-identifier">am</span> = {
+      <span class="ruby-value">:base</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">base</span>,
+      <span class="ruby-value">:class</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>,
+      <span class="ruby-value">:name</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">id2name</span>,
+      <span class="ruby-value">:singleton</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">singleton</span>
+    }
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">irb?</span>(<span class="ruby-identifier">callstack</span>)
+      <span class="ruby-identifier">am</span>.<span class="ruby-identifier">update</span>(
+        <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">HISTFILENAME</span>,
+        <span class="ruby-value">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>.<span class="ruby-identifier">size</span>,
+        <span class="ruby-value">:def</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">begin</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>[<span class="ruby-value">-1</span>] <span class="ruby-keyword">rescue</span> <span class="ruby-constant">IndexError</span> <span class="ruby-keyword">end</span>
+      )
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">_</span> = <span class="ruby-identifier">where</span>(<span class="ruby-identifier">callstack</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;:&#39;</span>)
+      <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">to_i</span>
+
+      <span class="ruby-identifier">am</span>.<span class="ruby-identifier">update</span>(
+        <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file</span>,
+        <span class="ruby-value">:line</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>,
+        <span class="ruby-value">:def</span>  =<span class="ruby-operator">&gt;</span> (<span class="ruby-constant">SCRIPT_LINES__</span>[<span class="ruby-identifier">file</span>] <span class="ruby-operator">||</span> [])[<span class="ruby-identifier">line</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+      )
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-constant">AddedMethod</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">am</span>)
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- identify_added_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- identify_added_method-method -->
+
+    
+      <div id="method-i-init_all_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_all_methods</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="init_all_methods-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_all_methods</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:ALL_METHODS</span>)
+    <span class="ruby-identifier">const_set</span>(<span class="ruby-value">:ALL_METHODS</span>, <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-identifier">j</span>] = [] }
+    })
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- init_all_methods-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- init_all_methods-method -->
+
+    
+      <div id="method-i-init_callbacks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_callbacks</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="init_callbacks-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_callbacks</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:CALLBACKS</span>)
+    <span class="ruby-identifier">const_set</span>(<span class="ruby-value">:CALLBACKS</span>, [])
+    <span class="ruby-identifier">define_callback</span>(<span class="ruby-value">:__default</span>, <span class="ruby-regexp">//</span>, [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">added_method_callback</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- init_callbacks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- init_callbacks-method -->
+
+    
+      <div id="method-i-init_script_lines" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_script_lines</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="init_script_lines-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_script_lines</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:SCRIPT_LINES__</span>)
+    <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-value">:SCRIPT_LINES__</span>, {})
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- init_script_lines-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- init_script_lines-method -->
+
+    
+      <div id="method-i-irb-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">irb?</span><span
+            class="method-args">(callstack)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="irb-3F-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">irb?</span>(<span class="ruby-identifier">callstack</span>)
+  <span class="ruby-identifier">have_readline_history?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">defined_in_irb?</span>(<span class="ruby-identifier">callstack</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- irb-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- irb-3F-method -->
+
+    
+      <div id="method-i-patch_readline_history" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">patch_readline_history</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="patch_readline_history-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">patch_readline_history</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">have_readline_history?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:_added_methods_original_push</span>)
+
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>
+    <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:_added_methods_original_push</span>, <span class="ruby-value">:push</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">push</span>(<span class="ruby-identifier">l</span>)
+      (<span class="ruby-constant">SCRIPT_LINES__</span>[<span class="ruby-constant">HISTFILENAME</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>.<span class="ruby-identifier">to_a</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">l</span>
+      <span class="ruby-identifier">_added_methods_original_push</span>(<span class="ruby-identifier">l</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:&lt;&lt;</span>, <span class="ruby-value">:push</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- patch_readline_history-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- patch_readline_history-method -->
+
+    
+      <div id="method-i-singleton_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">singleton_class</span><span
+            class="method-args">(klass = self)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="singleton_class-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">singleton_class</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- singleton_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- singleton_class-method -->
+
+    
+      <div id="method-i-where" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">where</span><span
+            class="method-args">(callstack, default = '(none):0')</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="where-source">
+            <pre><span class="ruby-comment"># File lib/added_methods.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">where</span>(<span class="ruby-identifier">callstack</span>, <span class="ruby-identifier">default</span> = <span class="ruby-string">&#39;(none):0&#39;</span>)
+  <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/:in `.*&#39;/</span> } <span class="ruby-operator">||</span> <span class="ruby-identifier">callstack</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">default</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- where-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- where-method -->
+
+    
+    </section><!-- private-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
