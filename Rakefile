@@ -10,6 +10,7 @@ begin
       :summary  => %q{Watches for added methods and records them.},
       :author   => %q{Jens Wille},
       :email    => %q{jens.wille@gmail.com},
+      :license  => %q{AGPL},
       :homepage => :blackwinter
     }
   }}
