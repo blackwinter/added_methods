@@ -10,7 +10,7 @@ describe AddedMethods do
     end
 
     it "should record it" do
-      @added_methods.should have(1).item
+      @added_methods.size.should == 1
     end
 
     it "should find it by name" do
@@ -70,8 +70,18 @@ describe AddedMethods do
         @added_method.source.should == ["      class SomeClass; def some_method; end; end\n"]
       end
 
-      it "should know its source from Ruby2Ruby" do
-        @added_method.r2r_source.should == " [R2R]\ndef some_method\n  # do nothing\nend"
+      if Object.const_defined?(:Ruby2Ruby)
+
+        it "should know its source from Ruby2Ruby" do
+          @added_method.r2r_source.should == " [R2R]\ndef some_method\n  # do nothing\nend"
+        end
+
+      else
+
+        it "should not know its source from Ruby2Ruby" do
+          @added_method.r2r_source.should be_nil
+        end
+
       end
 
     end
@@ -88,7 +98,7 @@ describe AddedMethods do
     end
 
     it "should record it" do
-      @added_methods.should have_at_least(1).item
+      @added_methods.size.should >= 1
     end
 
     describe "added method" do
