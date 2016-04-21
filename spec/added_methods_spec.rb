@@ -14,12 +14,12 @@ describe AddedMethods do
     end
 
     it "should find it by name" do
-      AddedMethods.find(:name => 'some_method').first.should be_eql(@added_method)
+      AddedMethods.find(name: 'some_method').first.should be_eql(@added_method)
       AddedMethods.find_by_name('some_method').first.should be_eql(@added_method)
     end
 
     it "should find it by class" do
-      AddedMethods.find(:class => SomeClass).first.should be_eql(@added_method)
+      AddedMethods.find(class: SomeClass).first.should be_eql(@added_method)
       AddedMethods.find_by_class(SomeClass).first.should be_eql(@added_method)
     end
 
@@ -34,11 +34,11 @@ describe AddedMethods do
     end
 
     it "should find it by file" do
-      AddedMethods.find(:file => __FILE__).first.should be_eql(@added_method)
+      AddedMethods.find(file: __FILE__).first.should be_eql(@added_method)
     end
 
     it "should find it by regexp" do
-      AddedMethods.find(:name => /some_method/).first.should be_eql(@added_method)
+      AddedMethods.find(name: /some_method/).first.should be_eql(@added_method)
     end
 
     describe "added method" do

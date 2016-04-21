@@ -3,7 +3,7 @@
 #                                                                             #
 # added_methods - watch for added methods and record them.                    #
 #                                                                             #
-# Copyright (C) 2007-2013 Jens Wille                                          #
+# Copyright (C) 2007-2016 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -150,19 +150,17 @@ module AddedMethods
 
   def find_by_class(*classes)
     conditions = classes.last.is_a?(Hash) ? classes.pop : {}
-    find(conditions.merge(:class => classes))
+    find(conditions.merge(class: classes))
   end
 
   def find_by_name(*names)
     conditions = names.last.is_a?(Hash) ? names.pop : {}
-    find(conditions.merge(:name => names.map { |m| m.to_s }))
+    find(conditions.merge(name: names.map(&:to_s)))
   end
 
   def find_one_by_name_or_class(name_or_class, conditions = {})
     (name_or_class.is_a?(Class) ?
-      find_by_class(name_or_class) :
-      find_by_name(name_or_class)
-    ).last
+      find_by_class(name_or_class) : find_by_name(name_or_class)).last
   end
 
   alias_method :[], :find_one_by_name_or_class
@@ -243,26 +241,26 @@ module AddedMethods
 
   def identify_added_method(base, klass, id, singleton, callstack)
     am = {
-      :base      => base,
-      :class     => klass,
-      :name      => id.id2name,
-      :singleton => singleton
+      base:      base,
+      class:     klass,
+      name:      id.id2name,
+      singleton: singleton
     }
 
     if irb?(callstack)
       am.update(
-        :file => HISTFILENAME,
-        :line => Readline::HISTORY.size,
-        :def  => begin Readline::HISTORY[-1] rescue IndexError end
+        file: HISTFILENAME,
+        line: Readline::HISTORY.size,
+        def:  begin Readline::HISTORY[-1] rescue IndexError end
       )
     else
       file, line, _ = where(callstack).split(':')
       line = line.to_i
 
       am.update(
-        :file => file,
-        :line => line,
-        :def  => (SCRIPT_LINES__[file] || [])[line - 1]
+        file: file,
+        line: line,
+        def:  (SCRIPT_LINES__[file] || [])[line - 1]
       )
     end
 
